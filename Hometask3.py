@@ -10,6 +10,7 @@ def parametrized_decorator(path):
             with open(path, 'a', encoding='utf-8') as f:
                 f.write(f'*** Дата выполнения: {datetime.now().strftime(("%d/%m/%Y %H:%M:%S"))}, имя функции:{(str(old_function.__name__))},\n'
                         f'аргументы: позиционные - {args} именнованные - {kwargs}, результат функции: {return_value}\n')
+            return return_value
         return new_function
     return decorator
 
